@@ -19,21 +19,21 @@ class Solution {
             int target = aSums.get(i);
             
             //이분탐색
-            int l=0, r = bSums.size()-1;
+            int l=0, r = bSums.size();
             int mid = (l+r)/2;
             int temp = 0;
-            while(l<=r){
+            while(l<r){
                 mid = (l+r)/2;
                 
                 if(bSums.get(mid) < target){
-                    temp = mid+1;
+                    
                     l = mid + 1;
                 }else{
-                    r = mid - 1;
+                    r = mid ;
                 }
             }
             
-            win += temp;
+            win += l;
         }
         
         return win;
